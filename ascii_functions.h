@@ -6,8 +6,9 @@
 #include <iomanip>
 #include <cmath>
 #include <cstdlib>
-
 // ======================================================================================
+
+
 
 // Helper function to read the provided font from a file.  The format
 // of the font file is described in comments below.  The width,
@@ -204,26 +205,5 @@ std::string read(std::string bitmap_file, char* read_file){
   //END check through letters
   return return_string;
 }
-// ======================================================================================
-int main(int argc, char* argv[]){
-  std::string output_type = argv[1];
-  //if user wants to convert an ASCII art file to text run the read function
-  if (output_type == "read"){
-    if(argc != 4){
-      std::cerr << "Please enter only 4 parameters";
-      exit(1);
-    }
-    std::string output_string = read(std::string(argv[2]), argv[3]);
-    std::cout << output_string;
-  }else if(output_type=="display"){
-    // If user wants to display ASCII art run the display function
-    if(argc != 6){
-      std::cerr << "Please enter only 6 parameters";
-      exit(1);
-    }
-    std::string output_string = display(std::string(argv[2]),std::string(argv[3]),char(argv[4][0]),char(argv[5][0]));
-    std::cout << output_string;
-  }else{
-    std::cerr << "Your first parameter must be either read or display";
-  }
-}
+
+
